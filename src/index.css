@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-[Poppins] bg-main text-white overflow-x-hidden
+  }
+  li {
+    @apply px-4 cursor-pointer
+  }
+}
