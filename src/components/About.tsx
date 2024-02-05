@@ -28,12 +28,12 @@ const About: React.FC = () => {
               <div className='bg-second border border-solid border-transparent rounded-xl px-0 py-4 md:py-7 text-center flex flex-col items-center hover:bg-transparent hover:border-white text-gray-300 hover:text-second duration-300 ease'>
                 <FaAward className='text-lg mb-3' />
                 <h5 className='text-sm md:text-lg'>Experience</h5>
-                <small className='text-[8.5px] md:text-[10px]'>1 Years Working</small>
+                <small className='text-[8.5px] md:text-[10px]'>1 Years Web Development</small>
               </div>
               <div className='bg-second border border-solid border-transparent rounded-xl px-0 py-4 md:py-7 text-center flex flex-col items-center hover:bg-transparent hover:border-white text-gray-300 hover:text-second duration-300 ease'>
                 <FaUsers className='text-lg mb-3' />
                 <h5 className='text-sm md:text-lg'>Clients</h5>
-                <small className='text-[8.5px] md:text-[10px]'>2+ Indonesian</small>
+                <small className='text-[8.5px] md:text-[10px]'>3+ Indonesian</small>
               </div>
               <div className='bg-second border border-solid border-transparent rounded-xl px-0 py-4 md:py-7 text-center flex flex-col items-center hover:bg-transparent hover:border-white text-gray-300 hover:text-second duration-300 ease self-center'>
                 <FaFolder className='text-lg mb-3' />
@@ -42,7 +42,7 @@ const About: React.FC = () => {
               </div>
             </div>
             <motion.p variants={fadeIn('up', 'tween', 0.2, 1)} className='mt-8 mx-0 mb-9'>
-              I'm Hizkia Reppi, I come from Indonesia. I am a student at Manado State University. I focus on the field of Web Development, especially in the field of Front-End Web Development. I have attended and am competent in the LSP Informatics Junior Web Developer certification. I love working with other developers and I enjoy writing useful code and web elements for users all over the world.
+              I'm Hizkia Reppi, I come from Indonesia. I am a student at Manado State University. I focus on the field of Web Development, especially in the field of Front-End Web Development. I have attended and am competent in the LSP Informatics and LSP BPPTIK Kominfo field Junior Web Developer certification. I love working with other developers and I enjoy writing useful code and web elements for users all over the world.
             </motion.p>
             <Link to='contact' className='bg-second text-white shadow-btn shadow-white py-[10px] px-7 inline-block border border-solid border-transparent text-base font-normal ease transition-all duration-300 cursor-pointer hover:bg-white hover:text-second hover:shadow-second' smooth={true} duration={500}>Contact Me</Link>
           </motion.div>

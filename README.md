@@ -20,6 +20,10 @@ Use the package manager pnpm to install dependencies.
 ```bash
 
 $ pnpm install
+or
+$ npm install
+or
+$ yarn install
 
 ```
 
@@ -28,5 +32,12 @@ $ pnpm install
 ```bash
 
 $ pnpm run dev
+or
+$ npm run dev
+or
+$ yarn dev
 
 ```
+
+## Javascript Version
+[Portfolio Hizkia Reppi](https://github.com/HizkiaReppi/personal-portfolio-react)
