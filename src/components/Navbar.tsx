@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion'
 import { Link } from 'react-scroll';
 import { FaBars, FaTimes, FaGithub, FaLinkedin } from 'react-icons/fa'
@@ -14,18 +14,38 @@ const navItems = [
   { id: 'contact', label: 'Contact' },
 ];
 
-const Navbar: React.FC = () => {
+interface NavbarProps {
+  screenWidth: number;
+}
+
+const Navbar: React.FC<NavbarProps> = ({ screenWidth }) => {
   const [nav, setNav] = useState(false);
+  const [iconSize, setIconSize] = useState(30);
+
+  const countSize = (): number => {
+    if (screenWidth < 640) return 18;
+    if (screenWidth >= 640 && screenWidth < 768) return 20;
+    if (screenWidth >= 768 && screenWidth < 1024) return 23;
+    if (screenWidth >= 1024 && screenWidth < 1280) return 28;
+    if (screenWidth >= 1280 && screenWidth < 1536) return 30;
+    return 30;
+  };
 
   const handleClick = () => setNav(!nav);
 
-  window.addEventListener('scroll', () => {
-    if (window.scrollY < -1) {
-      setNav(true);
-    } else {
-      setNav(false);
-    }
-  });
+  useEffect(() => {
+    setIconSize(countSize());
+  }, [screenWidth]);
+
+  useEffect(() => {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY < -1) {
+        setNav(true);
+      } else {
+        setNav(false);
+      }
+    });
+  }, []);
 
   return (
     <motion.nav
@@ -68,26 +88,26 @@ const Navbar: React.FC = () => {
       </ul>
 
       {/* Social Icons */}
-      <div className='hidden fixed lg:flex flex-col top-[35%] left-0'>
+      <div className='fixed lg:flex flex-col top-[35%] left-0'>
         <ul>
-          <li className='w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-0 duration-300 bg-blue-600'>
+          <li className='w-[130px] md:w-[160px] h-12 md:h-[60px] flex justify-between items-center ml-[-80px] md:ml-[-100px] hover:ml-0 duration-300 bg-blue-600'>
             <a className='flex justify-between items-center w-full text-gray-300' href="https://www.linkedin.com/in/hizkiareppi/">
-              Linkedin <FaLinkedin size={30} />
+              Linkedin <FaLinkedin size={iconSize} />
             </a>
           </li>
-          <li className='w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-0 duration-300 bg-[#333333]'>
+          <li className='w-[130px] md:w-[160px] h-12 md:h-[60px] flex justify-between items-center ml-[-80px] md:ml-[-100px] hover:ml-0 duration-300 bg-[#333333]'>
             <a className='flex justify-between items-center w-full text-gray-300' href="https://github.com/hizkiareppi">
-              Github <FaGithub size={30} />
+              Github <FaGithub size={iconSize} />
             </a>
           </li>
-          <li className='w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-0 duration-300 bg-[#6FC2B0]'>
+          <li className='w-[130px] md:w-[160px] h-12 md:h-[60px] flex justify-between items-center ml-[-80px] md:ml-[-100px] hover:ml-0 duration-300 bg-[#6FC2B0]'>
             <a className='flex justify-between items-center w-full text-gray-300' href="mailto:email.hizkiareppi@gmail.com">
-              Email <HiOutlineMail size={30} />
+              Email <HiOutlineMail size={iconSize} />
             </a>
           </li>
-          <li className='w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-0 duration-300 bg-[#565F69]'>
+          <li className='w-[130px] md:w-[160px] h-12 md:h-[60px] flex justify-between items-center ml-[-80px] md:ml-[-100px] hover:ml-0 duration-300 bg-[#565F69]'>
             <a className='flex justify-between items-center w-full text-gray-300' href="/Hizkia-Jefren-Reppi.pdf" download={'Hizkia-Jefren-Reppi.pdf'}>
-              Resume <BsFillPersonLinesFill size={30} />
+              Resume <BsFillPersonLinesFill size={iconSize} />
             </a>
           </li>
         </ul>
