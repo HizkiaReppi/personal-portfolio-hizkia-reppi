@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    @apply overflow-x-hidden
+  }
   body {
     @apply font-[Poppins] bg-main text-white overflow-x-hidden
   }
